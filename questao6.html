@@ -11,47 +11,39 @@
         <script src="js/forms.js"></script>
         <link href="css/forms.css" rel="stylesheet">
     </head>
-    <body>
+    <body onLoad="verifyForm(6)">
         <div class="one-col-grid">
             <nav class="one-col-grid">
-                <div class="nav-bar" style="vertical-align: middle;">
-                    <a href="#questao1" class="six-col-grid actived" style="color:#4CAF50" >Questão 1<br> <div class="glyphicon glyphicon-ok" aria-hidden="true"></div></a>
-                    <a href="#questao2" class="six-col-grid">Questão 2<br> <div class="glyphicon glyphicon-triangle-top" aria-hidden="true"></div></a>
-                    <a href="#questao3" class="six-col-grid">
-                        <!--Questão 3<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
-                    </a>
-                    <a href="#questao4" class="six-col-grid">
-                        <!--Questão 4<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
-                    </a>
-                    <a href="#questao5" class="six-col-grid">
-                        <!--Questão 5<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
-                    </a>
-                    <a href="#questao6" class="six-col-grid">
-                        <!--Questão 6<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
-                    </a>
+                <div class="nav-bar">
+                    <label class="six-col-grid" id="nav-q1"></label>
+                    <label class="six-col-grid" id="nav-q2"></label>
+                    <label class="six-col-grid" id="nav-q3"></label>
+                    <label class="six-col-grid" id="nav-q4"></label>
+                    <label class="six-col-grid" id="nav-q5"></label>
+                    <label class="six-col-grid" id="nav-q6"></label>
                 </div>
             </nav>
             <div class="one-col-grid main">
                 <form>
-                    <h2 align="center">Questão 6</h2>
+                    <h2 align="center" style="margin-top:15px">Questão 6</h2>
                     <hr class="style1">
                     <div align="center" style="padding-bottom: 14px">O(a) Sr(a) sentiu que não conseguiria levar adiante as suas tarefas?</div>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Nunca ou Raramente
+                        <input type="radio" name="answer" value="Nunca ou Raramente"> Nunca ou Raramente
                     </label>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Às vezes
+                        <input type="radio" name="answer" value="Às vezes"> Às vezes
                     </label>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Frequentemente
+                        <input type="radio" name="answer" value="Frequentemente"> Frequentemente
                     </label>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Sempre
+                        <input type="radio" name="answer" value="Sempre"> Sempre
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
-                        <button type="button" class="btn btn-primary btn-lg" onclick="previousQuestion(this)" value="1"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="previousQuestion(this)" value="5"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
                         &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <button type="button" class="btn btn-primary btn-lg" onclick="nextQuestion(this)" value="3">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="submitForm()">Enviar Formulário</button>
                         <!--<input type="button" value="Anterior">
                         <input type="button" value="Próxima">-->
                     <div>

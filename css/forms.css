@@ -22,7 +22,7 @@ body {
     vertical-align: middle;
 }*/
 
-.nav-bar a {
+.nav-bar label {
     float: left;
     display: block;
     background-color: #222222;
@@ -31,6 +31,7 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 125%;
+    font-weight: normal;
     height: 78px;
 }
 
