@@ -6,115 +6,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PPSUS</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/bootstrap.min.js"></script>
 
-        <style>
-            body {
-                margin: 0;
-                text-align: center;
-            }
-
-            * {
-                box-sizing: border-box;
-            }
-
-            .one-col-grid {
-                width: 100%;
-                float: left;
-            } 
-
-            .six-col-grid {
-                width: 16.66666%;
-                float: left;
-            } 
-
-            .nav-bar a {
-                float: left;
-                display: block;
-                background-color: #222222;
-                color: #9D9D9D;
-                /*text-align: center;*/
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 125%;
-            }
-            
-            .nav-bar a:hover {
-    background-color: #333;
-    color: white;
-}
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-            nav {
-                float: top;
-
-                display: block;
-            }
-            
-            .main {
-                text-align: left;
-                font-size: 140%;
-                margin-top: 4px;
-            }
-
-            .main label {
-                font-weight: inherit;
-            }
-               
-            .opt-question {
-                padding-top: 15px;
-                padding-bottom: 15px;
-                margin-top: 16px;
-                border:1px solid black;
-                background-color: #ddd;
-            }
-
-            .flow-btn {
-                margin-top: 35px;
-            }
-
-            hr.style1 {
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
-        </style>
+        <script src="js/forms.js"></script>
+        <link href="css/forms.css" rel="stylesheet">
     </head>
     <body>
         <div class="one-col-grid">
             <nav class="one-col-grid">
-                <div class="nav-bar">
-                    <a href="#questao1" class="six-col-grid" style="color:#4CAF50" >Questão 1<br> <div class="glyphicon glyphicon-ok" aria-hidden="true"></div></a>
-                    <a href="#questao2" class="six-col-grid">Questão 2<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    <a href="#questao3" class="six-col-grid">Questão 3<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    <a href="#questao4" class="six-col-grid">Questão 4<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    <a href="#questao5" class="six-col-grid">Questão 5<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    <a href="#questao6" class="six-col-grid">Questão 6<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                <div class="nav-bar" style="vertical-align: middle;">
+                    <a href="#questao1" class="six-col-grid actived" style="color:#4CAF50" >Questão 1<br> <div class="glyphicon glyphicon-ok" aria-hidden="true"></div></a>
+                    <a href="#questao2" class="six-col-grid">Questão 2<br> <div class="glyphicon glyphicon-triangle-top" aria-hidden="true"></div></a>
+                    <a href="#questao3" class="six-col-grid">
+                        <!--Questão 3<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+                    </a>
+                    <a href="#questao4" class="six-col-grid">
+                        <!--Questão 4<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+                    </a>
+                    <a href="#questao5" class="six-col-grid">
+                        <!--Questão 5<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+                    </a>
+                    <a href="#questao6" class="six-col-grid">
+                        <!--Questão 6<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+                    </a>
                 </div>
             </nav>
             <div class="one-col-grid main">
                 <form>
-                    <h2 align="center">Questão 1</h2>
+                    <h2 align="center">Questão 6</h2>
                     <hr class="style1">
-                    <div align="center" style="padding-bottom: 10px">Nos ultimos 12 meses (ultimo ano) o(a) Sr(a) acha que perdeu peso sem fazer nenhuma dieta?</div>
+                    <div align="center" style="padding-bottom: 14px">O(a) Sr(a) sentiu que não conseguiria levar adiante as suas tarefas?</div>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Sim 
+                        <input type="radio" name="q1"> Nunca ou Raramente
                     </label>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Não
+                        <input type="radio" name="q1"> Às vezes
                     </label>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Não sabe
+                        <input type="radio" name="q1"> Frequentemente
                     </label>
                     <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="q1"> Não respondeu
+                        <input type="radio" name="q1"> Sempre
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
-                        <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="previousQuestion(this)" value="1"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
                         &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <button type="button" class="btn btn-primary btn-lg">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="nextQuestion(this)" value="3">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
                         <!--<input type="button" value="Anterior">
                         <input type="button" value="Próxima">-->
                     <div>
