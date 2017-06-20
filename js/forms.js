@@ -15,23 +15,37 @@ function verifyForm(currentQuestion) {
     for(i=0;i<6;i++) {
         questionNumber = parseInt(i) + 1;
         if(i == (currentQuestion-1)) {
-            navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>';
+            navQuestion[i].innerHTML = "<strong>Questão " + questionNumber + '</strong><br> <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>';
             if(answer[i]!=-1) {
-                document.getElementById("label-" + answer[i]).style="background-color:#333; font-weight:bold; color:white";
+                document.getElementById("label-" + answer[i]).style="background-color:#222; font-weight:bold; color:#fff";
                 document.getElementById("radio-" + answer[i]).checked=true;
             }
-            // navQuestion[i].style="color:#fff";
+            navQuestion[i].style="color:#fff";
             break;
         }
 
         if(answer[i]==-1 || answer[i]==null) 
-            navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
+            navQuestion[i].innerHTML = "<strong>Questão " + questionNumber + '</strong><br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
         else {
-            navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
+            navQuestion[i].innerHTML = "<strong>Questão " + questionNumber + '</strong><br> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
             navQuestion[i].style="color:#4CAF50";
         }
             navQuestion[i].className="six-col-grid active";
     }
+}
+
+function clearSelection() {
+    radio = document.querySelectorAll(".opt-question");
+    for(i=0; i<radio.length; i++) {
+        radio[i].style = "background-color:#ddd; color:initial; font-weight: normal";
+        radio[i].checked = false;
+    }
+}
+
+function radioClick(answer) {
+    clearSelection();
+    label = document.getElementById("label-" + answer);
+    label.style = "background-color:#222; font-weight:bold; color:#fff";
 }
 
 function goTo(question) {

@@ -12,7 +12,7 @@
         <link href="css/forms.css" rel="stylesheet">
     </head>
     <body onLoad="verifyForm(5)">
-        <span style="height:0px; width:100%; position:relative; display:inline-block; float:left; font-weight: bold; color:#666; font-size: 12px; padding:0; margin:0; top:11.7em; letter-spacing: 0.5px;">PATRICK SCURACCHIO</span>
+        <span class="patient-name">PATRICK SCURACCHIO</span>
         <div class="one-col-grid">
             <nav class="one-col-grid">
                 <div class="nav-bar">
@@ -26,31 +26,31 @@
             </nav>
             <div class="one-col-grid main">
                 <form>
-                    <h2 align="center" style="margin-top:15px">Questão 5</h2>
-                    <hr class="style1">
+                    <h2 align="center">Questão 5</h2>
+                    <hr>
                     <div align="center" style="padding-bottom: 14px">O(a) Sr(a) sentiu que teve que fazer algum esforço para dar conta de suas tarefas do dia-a-dia?</div>
-                    <label class="one-col-grid opt-question" id="label-Nunca ou raramente" align="center">
+                    <label class="one-col-grid opt-question" id="label-Nunca ou raramente" onclick="radioClick('Nunca ou raramente')" align="center">
                         <input type="radio" name="answer" id="radio-Nunca ou raramente" value="Nunca ou raramente"> Nunca ou raramente
                     </label>
-                    <label class="one-col-grid opt-question" id="label-Às vezes" align="center">
+                    <label class="one-col-grid opt-question" id="label-Às vezes" onclick="radioClick('Às vezes')" align="center">
                         <input type="radio" name="answer" id="radio-Às vezes"value="Às vezes"> Às vezes
                     </label>
-                    <label class="one-col-grid opt-question" id="label-Frequentemente" align="center">
+                    <label class="one-col-grid opt-question" id="label-Frequentemente" onclick="radioClick('Frequentemente')" align="center">
                         <input type="radio" name="answer" id="radio-Frequentemente" value="Frequentemente"> Frequentemente
                     </label>
-                    <label class="one-col-grid opt-question" id="label-Sempre" align="center">
+                    <label class="one-col-grid opt-question" id="label-Sempre" onclick="radioClick('Sempre')" align="center">
                         <input type="radio" name="answer" id="radio-Sempre" value="Sempre"> Sempre
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
-                        <button type="button" class="btn btn-primary btn-lg" onclick="previousQuestion(this)" value="4"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
+                        <button type="button" class="btn btn-primary btn-large" onclick="previousQuestion(this)" value="4"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
                         &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <button type="button" class="btn btn-primary btn-lg" onclick="nextQuestion(this)" value="6">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this)" value="6">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
                     <div>
                 </form>
             </div>
-            <section style="position: fixed; bottom: 0px; width: 100%;">
- <p style="margin: 0 auto; width: 300px; height:40px; background-color:#222; color:white; width:100%">Blah blah</p>
-</section>
+            <footer style="position: fixed; bottom: 0px; width: 100%;">
+                <p>Blah blah</p>
+            </footer>
         </div>
     </body>
 </html>

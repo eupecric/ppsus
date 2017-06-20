@@ -12,6 +12,7 @@
         <link href="css/forms.css" rel="stylesheet">
     </head>
     <body onLoad="verifyForm(4)">
+        <span class="patient-name">PATRICK SCURACCHIO</span>
         <div class="one-col-grid">
             <nav class="one-col-grid">
                 <div class="nav-bar">
@@ -25,35 +26,31 @@
             </nav>
             <div class="one-col-grid main">
                 <form>
-                    <h2 align="center" style="margin-top:15px">Questão 4</h2>
-                    <hr class="style1">
+                    <h2 align="center">Questão 4</h2>
+                    <hr>
                     <div align="center" style="padding-bottom: 14px">O(a) Sr(a) acha que hoje está caminhando mais devagar do que caminhava há 12 meses atrás (um ano)?</div>
-                    <label class="one-col-grid opt-question" id="label-Sim" align="center">
+                    <label class="one-col-grid opt-question" id="label-Sim" onclick="radioClick('Sim')" align="center">
                         <input type="radio" name="answer" id="radio-Sim" value="Sim"> Sim 
                     </label>
-                    <label class="one-col-grid opt-question" id="label-Não" align="center">
+                    <label class="one-col-grid opt-question" id="label-Não" onclick="radioClick('Não')" align="center">
                         <input type="radio" name="answer" id="radio-Sim" value="Não"> Não
                     </label>
-                    <label class="one-col-grid opt-question" id="label-Não sabe" align="center">
+                    <label class="one-col-grid opt-question" id="label-Não sabe" onclick="radioClick('Não sabe')" align="center">
                         <input type="radio" name="answer" id="radio-Sim" value="Não sabe"> Não sabe
                     </label>
-                    <label class="one-col-grid opt-question" id="label-Não respondeu" align="center">
+                    <label class="one-col-grid opt-question" id="label-Não respondeu" onclick="radioClick('Não respondeu')" align="center">
                         <input type="radio" name="answer" id="radio-Sim" value="Não respondeu"> Não respondeu
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
-                        <button type="button" class="btn btn-primary btn-lg" onclick="previousQuestion(this)" value="3"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
+                        <button type="button" class="btn btn-primary btn-large" onclick="previousQuestion(this)" value="3"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
                         &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <button type="button" class="btn btn-primary btn-lg" onclick="nextQuestion(this)" value="5">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
-                        <!--<input type="button" value="Anterior">
-                        <input type="button" value="Próxima">-->
+                        <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this)" value="5">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
                     <div>
                 </form>
-                <!--<div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    60%
-                </div>-->
-<!--</div>-->
             </div>
+            <footer style="position: fixed; bottom: 0px; width: 100%;">
+                <p>Blah blah</p>
+            </footer>
         </div>
     </body>
 </html>

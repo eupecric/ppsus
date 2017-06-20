@@ -17,12 +17,27 @@ body {
     float: left;
 } 
 
+.patient-name {
+    height:0px; 
+    width:100%; 
+    position:relative; 
+    display:inline-block; 
+    float:left; 
+    font-weight: bold; 
+    color:#666; 
+    font-size: 12px; 
+    padding:0; 
+    margin:0; 
+    top:11.8em; 
+    letter-spacing: 0.5px;
+}
+
 .nav-bar label {
     float: left;
     display: block;
-    background-color: #222222;
+    background-color: #222;
     /*color: white;*/
-    color: #9D9D9D;
+    color: #ddd;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 125%;
@@ -62,16 +77,44 @@ input[name=answer] {
 .opt-question:hover {
     cursor: pointer;
     /*background-color: #4CAF50;*/
-    background-color: #333;
-    color: #fff;
+    background-color: #222 !important;
+    color: #fff !important;
+    font-weight: bold !important;
 }
 
 .flow-btn {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
-hr.style1 {
-height: 10px;
-border: 0;
-box-shadow: 0 10px 10px -10px #8c8b8b inset;
+.btn-large {
+    padding: 16px 50px;
+    font-size: 1em;
+    text-align: center !important;
+}
+
+hr {
+    margin-top: 25px;
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+h2 {
+    margin-top:12px;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;   
+    bottom: 0px; 
+    width: 100%;
+}
+
+footer p {
+    margin: 0 auto; 
+    width: 300px; 
+    height:40px; 
+    background-color:#222;
+    color:white; 
+    width:100%;
 }
