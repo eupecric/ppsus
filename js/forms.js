@@ -14,8 +14,15 @@ function confirmForm() {
         p[i-1].innerHTML = p[i-1].innerHTML + " <strong>" + localStorage.getItem(i) + "</strong>";
 }
 
-function goConfirmFormPage() {
-    window.location.href="https://eupecric.github.io/ppsus/confirma_respostas.html";
+function goConfirmFormPage(value) { 
+    var answer = document.querySelector('input[name="answer"]:checked');
+    var currentQuestion = parseInt(value)-1;
+    if(answer!=null) {
+        saveQuestion(currentQuestion, answer.value);
+        window.location.href="https://eupecric.github.io/ppsus/confirma_respostas.html";
+    }
+    else
+        alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");
 }
 
 function submitForm() {
