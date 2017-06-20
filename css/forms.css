@@ -16,11 +16,6 @@ body {
     width: 16.66666%;
     float: left;
 } 
-/*
-.nav-bar {
-    text-align: center;
-    vertical-align: middle;
-}*/
 
 .nav-bar label {
     float: left;
@@ -35,27 +30,16 @@ body {
     height: 78px;
 }
 
-
-.nav-bar a:hover {
+.nav-bar label.active:hover {
     cursor: default;
-}
-
-.nav-bar a.actived:hover {
     background-color: #333;
-    color: white;
     cursor: pointer !important;
 }
 
-.nav-bar a.active {
-background-color: #4CAF50;
-color: white;
+input[name=answer] {
+    display: none;
 }
 
-/*nav {
-    float: top;
-
-    display: block;
-}*/
 
 .main {
     text-align: left;
@@ -73,6 +57,13 @@ color: white;
     margin-top: 16px;
     border:1px solid black;
     background-color: #ddd;
+}
+
+.opt-question:hover {
+    cursor: pointer;
+    /*background-color: #4CAF50;*/
+    background-color: #333;
+    color: #fff;
 }
 
 .flow-btn {

@@ -15,12 +15,12 @@
         <div class="one-col-grid">
             <nav class="one-col-grid">
                 <div class="nav-bar">
-                    <label class="six-col-grid" id="nav-q1"></label>
-                    <label class="six-col-grid" id="nav-q2"></label>
-                    <label class="six-col-grid" id="nav-q3"></label>
-                    <label class="six-col-grid" id="nav-q4"></label>
-                    <label class="six-col-grid" id="nav-q5"></label>
-                    <label class="six-col-grid" id="nav-q6"></label>
+                    <label class="six-col-grid" id="nav-q1" onclick="goTo(1)"></label>
+                    <label class="six-col-grid" id="nav-q2" onclick="goTo(2)"></label>
+                    <label class="six-col-grid" id="nav-q3" onclick="goTo(3)"></label>
+                    <label class="six-col-grid" id="nav-q4" onclick="goTo(4)"></label>
+                    <label class="six-col-grid" id="nav-q5" onclick="goTo(5)"></label>
+                    <label class="six-col-grid" id="nav-q6" onclick="goTo(6)"></label>
                 </div>
             </nav>
             <div class="one-col-grid main">
@@ -28,17 +28,17 @@
                     <h2 align="center" style="margin-top:15px">Questão 4</h2>
                     <hr class="style1">
                     <div align="center" style="padding-bottom: 14px">O(a) Sr(a) acha que hoje está caminhando mais devagar do que caminhava há 12 meses atrás (um ano)?</div>
-                    <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="answer" value="Sim"> Sim 
+                    <label class="one-col-grid opt-question" id="label-Sim" align="center">
+                        <input type="radio" name="answer" id="radio-Sim" value="Sim"> Sim 
                     </label>
-                    <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="answer" value="Não"> Não
+                    <label class="one-col-grid opt-question" id="label-Não" align="center">
+                        <input type="radio" name="answer" id="radio-Sim" value="Não"> Não
                     </label>
-                    <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="answer" value="Não sabe"> Não sabe
+                    <label class="one-col-grid opt-question" id="label-Não sabe" align="center">
+                        <input type="radio" name="answer" id="radio-Sim" value="Não sabe"> Não sabe
                     </label>
-                    <label class="one-col-grid opt-question" align="center">
-                        <input type="radio" name="answer" value="Não respondeu"> Não respondeu
+                    <label class="one-col-grid opt-question" id="label-Não respondeu" align="center">
+                        <input type="radio" name="answer" id="radio-Sim" value="Não respondeu"> Não respondeu
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
                         <button type="button" class="btn btn-primary btn-lg" onclick="previousQuestion(this)" value="3"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
