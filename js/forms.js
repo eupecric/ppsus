@@ -14,7 +14,11 @@ function confirmForm() {
         p[i-1].innerHTML = p[i-1].innerHTML + " <strong>" + localStorage.getItem(i) + "</strong>";
 }
 
-function sendAnswers() {
+function goConfirmFormPage() {
+    window.location.href="https://eupecric.github.io/ppsus/confirma_respostas.html";
+}
+
+function submitForm() {
     alert("Formulario enviado com sucesso!");
     window.location.href="https://eupecric.github.io/ppsus/paciente.html";
 }
@@ -25,7 +29,6 @@ function goInsertPatientPage() {
 }
 
 function insertPatient() {
-    alert("entrou");
     localStorage.setItem("patient",document.getElementById("patient-name").value);
     window.location.href = "https://eupecric.github.io/ppsus/questao1.html";
 }
