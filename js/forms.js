@@ -15,7 +15,7 @@ function verifyForm(currentQuestion) {
     for(i=0;i<6;i++) {
         questionNumber = parseInt(i) + 1;
         if(i == (currentQuestion-1)) {
-            navQuestion[i].innerHTML = "<strong>Questão " + questionNumber + '</strong><br> <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>';
+            navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>';
             if(answer[i]!=-1) {
                 document.getElementById("label-" + answer[i]).style="background-color:#222; font-weight:bold; color:#fff";
                 document.getElementById("radio-" + answer[i]).checked=true;
@@ -25,9 +25,9 @@ function verifyForm(currentQuestion) {
         }
 
         if(answer[i]==-1 || answer[i]==null) 
-            navQuestion[i].innerHTML = "<strong>Questão " + questionNumber + '</strong><br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
+            navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
         else {
-            navQuestion[i].innerHTML = "<strong>Questão " + questionNumber + '</strong><br> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
+            navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
             navQuestion[i].style="color:#4CAF50";
         }
             navQuestion[i].className="six-col-grid active";
