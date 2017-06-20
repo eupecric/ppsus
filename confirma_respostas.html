@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PPSUS</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/forms.js"></script>
+        <link href="css/forms.css" rel="stylesheet">
+    </head>
+    <body onLoad="confirmForm()">
+        <div class="one-col-grid" style="background-color:#222; margin:0px; padding:0px; color: #fff">
+            <header class="one-col-grid" algin="center"style="background-color:#222; margin:0px; color: #fff">
+                <h1>PPSUS</h1>
+            </header>
+        </div>
+        <section class="one-col-grid" style="margin-top:30px">
+            <!--<div style="float:left;width:15%">&nbsp</div>-->
+            <div style="float:left;width:100%; text-align:left; font-size:1.3em; padding-left:20px"> 
+                <p id="p1"><strong>Q1)</strong> Nos últimos 12 meses (último ano) O(a) Sr(a) acha que perdeu peso sem fazer nenhuma dieta?</p>
+                <p id="p2"><strong>Q2)</strong> O(a) Sr(a) acha que faz menos atividades físicas do que há 12 meses atrás (há um ano)?</p>
+                <p id="p3"><strong>Q3)</strong> Nos últimos 12 meses (último ano), o(a) Sr(a) acha que sua força diminuiu?</p>
+                <p id="p4"><strong>Q4)</strong> O(a) Sr(a) acha que hoje está caminhando mais devagar do que caminhava há 12 meses atrás (um ano)?</p>
+                <p id="p5"><strong>Q5)</strong> O(a) Sr(a) sentiu que teve que fazer algum esforço para dar conta de suas tarefas do dia-a-dia?</p>
+                <p id="p6"><strong>Q6)</strong> O(a) Sr(a) sentiu que não conseguiria levar adiante as suas tarefas?</p>
+            </div>
+            <!--<div style="float:left;width:15%">&nbsp</div>-->
+            <div align="left" class="one-col-grid flow-btn" style="ont-size:1.3em; padding-left:20px">
+                <button type="button" class="btn btn-primary btn-large" onclick="sendAnswers()">Enviar Formulario</button>
+            <div>
+        </section>
+    </body>
+</html>

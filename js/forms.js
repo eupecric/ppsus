@@ -8,6 +8,28 @@ function intializateAnswers() {
     localStorage.setItem("6", -1);
 }
 
+function confirmForm() {
+    var p = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3"), document.getElementById("p4"), document.getElementById("p5"), document.getElementById("p6")];
+    for(i=1;i<7;i++)
+        p[i-1].innerHTML = p[i-1].innerHTML + " <strong>" + localStorage.getItem(i) + "</strong>";
+}
+
+function sendAnswers() {
+    alert("Formulario enviado com sucesso!");
+    window.location.href="https://eupecric.github.io/ppsus/paciente.html";
+}
+
+function goInsertPatientPage() {
+    localStorage.setItem("login",document.getElementById("login").value);
+    window.location.href = "https://eupecric.github.io/ppsus/paciente.html";
+}
+
+function insertPatient() {
+    alert("entrou");
+    localStorage.setItem("patient",document.getElementById("patient-name").value);
+    window.location.href = "https://eupecric.github.io/ppsus/questao1.html";
+}
+
 function verifyForm(currentQuestion) {
     var answer = [localStorage.getItem("1"), localStorage.getItem("2"), localStorage.getItem("3"), localStorage.getItem("4"), localStorage.getItem("5"), localStorage.getItem("6")];
     var navQuestion = [document.getElementById("nav-q1"), document.getElementById("nav-q2"), document.getElementById("nav-q3"), document.getElementById("nav-q4"), document.getElementById("nav-q5"), document.getElementById("nav-q6")];
@@ -32,6 +54,14 @@ function verifyForm(currentQuestion) {
         }
             navQuestion[i].className="six-col-grid active";
     }
+ 
+    //Escreve nome do paciente
+    patientSpan = document.getElementById("patient-name");
+    patientSpan.innerHTML = localStorage.getItem("patient").toUpperCase();
+
+    //Escreve nome do agente de saude no footer
+    footer = document.getElementById("agent-name");
+    footer.innerHTML = "PPSUS - " +  localStorage.getItem("login").toUpperCase();
 }
 
 function clearSelection() {
