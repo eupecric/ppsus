@@ -16,7 +16,7 @@ function confirmForm() {
 
 function goConfirmFormPage(value) { 
     var answer = document.querySelector('input[name="answer"]:checked');
-    var currentQuestion = parseInt(value)-1;
+    var currentQuestion = parseInt(value);
     if(answer!=null) {
         saveQuestion(currentQuestion, answer.value);
         window.location.href="https://eupecric.github.io/ppsus/confirma_respostas.html";
