@@ -42,17 +42,14 @@ function goConfirmFormPage(value) {
 function loadPatients() {
     var to_write = '<a href="#" class="active">Pacientes</a>';
     var patients = localStorage.getItem("patients");
+    html_list = document.getElementById("patient-list");
 
     if(patients==null) { 
-        list.innerHTML = "";
+        html_list.innerHTML = "";
         return;
     }
-                    // <a href="#">Link 1</a>
-    // alert("aqui");
-    html_list = document.getElementById("patient-list");
     var patient = patients.split("_");
     for(i=0; i<patient.length; i++) {
-        // alert(patient[i]);
         to_write = to_write + '<a href="https://eupecric.github.io/ppsus/respostas.html?patient=' + patient[i] + '">'+ patient[i] +'</a>';
     }
     html_list.innerHTML = to_write;
