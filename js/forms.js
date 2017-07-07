@@ -80,7 +80,7 @@ function verifyForm(currentQuestion) {
 
     //Escreve nome do agente de saude no footer
     footer = document.getElementById("agent-name");
-    footer.innerHTML = "<strong>PPSUS - Formulario 1<br>Agente: " +  localStorage.getItem("login").toUpperCase() + "<br><a href='#'>Logout</a></strong>";
+    footer.innerHTML = "<strong>PPSUS - Formulario 1<br>" +  localStorage.getItem("login").toUpperCase() + "<br><a href='#'>Logout</a></strong>";
 }
 
 function clearSelection() {
