@@ -87,7 +87,7 @@ function showAnswers() {
 
 function insertPatient() {
     patient = document.getElementById("patient-name").value;
-    patients = getItem("patients");
+    patients = localStorage.getItem("patients");
     if(patients==null)
         patients = patient;
     else
