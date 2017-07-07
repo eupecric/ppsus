@@ -13,6 +13,9 @@ function confirmForm() {
     for(i=1;i<7;i++)
         p[i-1].innerHTML = p[i-1].innerHTML + " <p>Resposta: <strong>" + localStorage.getItem(i) + "</strong></p>";
     writePatient();
+
+    span = document.getElementById("agent-name");
+    span.innerHTML = localStorage.getItem("login").toUpperCase();
 }
 
 function goConfirmFormPage(value) { 
