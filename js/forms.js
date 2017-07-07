@@ -56,7 +56,7 @@ function loadPatients() {
 }
 
 function submitForm() {
-    alert("Formulario enviado com sucesso!");
+    // alert("Formulario enviado com sucesso!");
     window.location.href="https://eupecric.github.io/ppsus/paciente.html";
 }
 
@@ -90,7 +90,7 @@ function insertPatient() {
     else
         patients = patients + "_" + patient;
     localStorage.setItem("patient",patient);
-    alert(patients);
+    // alert(patients);
     localStorage.setItem("patients",patients);
     window.location.href = "https://eupecric.github.io/ppsus/questao1.html";
 }
