@@ -20,6 +20,7 @@ body {
 .three-col-grid {
     width: 33.33333%;
     float: left;
+    /*border: 1px solid black;*/
 } 
 
 .six-col-grid {
@@ -38,7 +39,7 @@ body {
     font-size: 12px; 
     padding:0; 
     margin:0; 
-    top:10.4em; 
+    top:12.0em; 
     letter-spacing: 0.5px;
 }
 

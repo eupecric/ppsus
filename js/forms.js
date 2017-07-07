@@ -11,7 +11,7 @@ function intializateAnswers() {
 function confirmForm() {
     var p = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3"), document.getElementById("p4"), document.getElementById("p5"), document.getElementById("p6")];
     for(i=1;i<7;i++)
-        p[i-1].innerHTML = p[i-1].innerHTML + " <strong>" + localStorage.getItem(i) + "</strong>";
+        p[i-1].innerHTML = p[i-1].innerHTML + " <p>Resposta: <strong>" + localStorage.getItem(i) + "</strong></p>";
     writePatient();
 }
 
@@ -66,7 +66,8 @@ function verifyForm(currentQuestion) {
             navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
         else {
             navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
-            navQuestion[i].style="color:#4CAF50";
+            // navQuestion[i].style="color:#4CAF50";
+            navQuestion[i].style="color:#FFF";
         }
             navQuestion[i].className="six-col-grid active";
     }
@@ -76,7 +77,7 @@ function verifyForm(currentQuestion) {
 
     //Escreve nome do agente de saude no footer
     footer = document.getElementById("agent-name");
-    footer.innerHTML = "PPSUS - " +  localStorage.getItem("login").toUpperCase();
+    footer.innerHTML = "<strong>PPSUS - Formulario 1<br>Agente: " +  localStorage.getItem("login").toUpperCase() + "<br><a href='#'>Logout</a></strong>";
 }
 
 function clearSelection() {

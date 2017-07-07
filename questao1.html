@@ -42,13 +42,20 @@
                         <input type="radio" name="answer" id="radio-Não respondeu" value="Não respondeu"> Não respondeu
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
-                        <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this)" value="2">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
-                    <div>
+                        <div class="three-col-grid">&nbsp
+                        </div>
+                        <div class="three-col-grid">
+                            <p id="agent-name"></p>
+                        </div>
+                        <div class="three-col-grid">
+                            <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this)" value="2">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
                 </form>
             </div>
-            <footer style="position: fixed; bottom: 0px; width: 100%;">
+            <!--<footer style="position: fixed; bottom: 0px; width: 100%;">
                 <p id="agent-name"></p>
-            </footer>
+            </footer>-->
         </div>
     </body>
 </html>
