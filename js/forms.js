@@ -8,6 +8,16 @@ function intializateAnswers() {
     localStorage.setItem("6", -1);
 }
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 function confirmForm() {
     var p = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3"), document.getElementById("p4"), document.getElementById("p5"), document.getElementById("p6")];
     for(i=1;i<7;i++)
@@ -29,6 +39,25 @@ function goConfirmFormPage(value) {
         alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");
 }
 
+function loadPatients() {
+    var to_write = '<a href="#" class="active">Pacientes</a>';
+    var patients = localStorage.getItem("patients");
+
+    if(patients==null) { 
+        list.innerHTML = "";
+        return;
+    }
+                    // <a href="#">Link 1</a>
+    // alert("aqui");
+    html_list = document.getElementById("patient-list");
+    var patient = patients.split("_");
+    for(i=0; i<patient.length; i++) {
+        // alert(patient[i]);
+        to_write = to_write + '<a href="https://eupecric.github.io/ppsus/respostas.html?patient=' + patient[i] + '">'+ patient[i] +'</a>';
+    }
+    html_list.innerHTML = to_write;
+}
+
 function submitForm() {
     alert("Formulario enviado com sucesso!");
     window.location.href="https://eupecric.github.io/ppsus/paciente.html";
@@ -39,8 +68,33 @@ function goInsertPatientPage() {
     window.location.href = "https://eupecric.github.io/ppsus/paciente.html";
 }
 
+function showAnswers() {
+    var patient = getParameterByName('patient');
+    var p = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3"), document.getElementById("p4"), document.getElementById("p5"), document.getElementById("p6")];
+    var answer = [localStorage.getItem(patient + '_1'),localStorage.getItem(patient + '_2'),localStorage.getItem(patient + '_3'),localStorage.getItem(patient + '_4'),localStorage.getItem(patient + '_5'),localStorage.getItem(patient + '_6')];
+    for(i=1;i<7;i++)
+        p[i-1].innerHTML = p[i-1].innerHTML + " <p>Resposta: <strong>" + answer[i-1] + "</strong></p>";
+    
+    patientSpan = document.getElementById("patient-name");
+    patientSpan.innerHTML = patient;
+
+
+    patientSpan = document.getElementById("agent-name");
+    patientSpan.innerHTML = localStorage.getItem("login").toUpperCase();
+
+    // alert(answer);
+}
+
 function insertPatient() {
-    localStorage.setItem("patient",document.getElementById("patient-name").value);
+    patient = document.getElementById("patient-name").value;
+    patients = getItem("patients");
+    if(patients==null)
+        patients = patient;
+    else
+        patients = patients + "_" + patient;
+    localStorage.setItem("patient",patient);
+    alert(patients);
+    localStorage.setItem("patients",patients);
     window.location.href = "https://eupecric.github.io/ppsus/questao1.html";
 }
 
@@ -104,6 +158,8 @@ function goTo(question) {
 }
 
 function saveQuestion(question, answer) {
+    var patient = localStorage.getItem('patient') + '_' + question;
+    localStorage.setItem(patient, answer);
     localStorage.setItem(question, answer);
 }
 

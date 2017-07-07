@@ -1,3 +1,5 @@
+/* verde: #4CAF50*/
+
 body {
     margin: 0;
     text-align: center;
@@ -18,9 +20,9 @@ body {
 } 
 
 .three-col-grid {
-    width: 33.33333%;
+    width: 33.33333% !important;
     float: left;
-    /*border: 1px solid black;*/
+    /*border: 2px solid black;*/
 } 
 
 .six-col-grid {
@@ -133,4 +135,21 @@ footer p {
     color:white; 
     width:100%;
     padding-top: 15px;
+}
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #205077; /* Add a green color to the "active/current" link */
+    color: white;
 }

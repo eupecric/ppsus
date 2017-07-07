@@ -11,7 +11,7 @@
         <script src="js/forms.js"></script>
         <link href="css/forms.css" rel="stylesheet">
     </head>
-    <body>
+    <body onLoad="loadPatients()">
         <div class="one-col-grid" style="background-color:#222; margin:0px; padding:0px; color: #fff">
             <header class="one-col-grid" algin="center"style="background-color:#222; margin:0px; color: #fff">
                 <h1>PPSUS - Protótipo 1</h1>
@@ -19,13 +19,21 @@
         </div>
         <section class="one-col-grid" style="margin-top:30px">
                 <p>Nome do paciente:
-                <input type="text" size="50" style="height:40px; border:2px solid black; padding-left:4px" id="patient-name">
+                <input type="text" size="50" style="height:60px; border:2px solid black; padding-left:4px" id="patient-name">
                 </p>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCPF:
-                <input type="text" size="50" style="height:40px; border:2px solid black; padding-left:4px">
+                <input type="text" size="50" style="height:60px; border:2px solid black; padding-left:4px">
             <div align="center" class="one-col-grid flow-btn">
                 <button type="button" class="btn btn-primary btn-large" onclick="intializateAnswers(); insertPatient();">Iniciar Formulario</button>
-            <div>
+            </div>
+            <div id="patients" class="one-col-grid" style="margin-top:30px;">
+                <div class="three-col-grid">&nbsp
+                </div>
+                <div class="vertical-menu three-col-grid" id="patient-list">
+                </div>
+                <div class="three-col-grid">&nbsp
+                </div>
+            </div>
         </section>
     </body>
 </html>
