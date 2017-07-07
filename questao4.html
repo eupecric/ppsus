@@ -42,15 +42,20 @@
                         <input type="radio" name="answer" id="radio-Sim" value="Não respondeu"> Não respondeu
                     </label>
                     <div align="center" class="one-col-grid flow-btn">
-                        <button type="button" class="btn btn-primary btn-large" onclick="previousQuestion(this)" value="3"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this)" value="5">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        <div class="three-col-grid">
+                            <button type="button" class="btn btn-primary btn-large" onclick="previousQuestion(this)" value="3"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Anterior</button>
+                        </div>
+                        <div class="three-col-grid">
+                            <p id="agent-name"></p>
+                        </div>
+                        <div class="three-col-grid">
+                            <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this)" value="5">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        </div>
                     <div>
                 </form>
-            </div>
-            <footer style="position: fixed; bottom: 0px; width: 100%;">
+            <!--<footer style="position: fixed; bottom: 0px; width: 100%;">
                 <p id="agent-name"></p>
-            </footer>
+            </footer>-->
         </div>
     </body>
 </html>

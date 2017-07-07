@@ -12,6 +12,7 @@ function confirmForm() {
     var p = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3"), document.getElementById("p4"), document.getElementById("p5"), document.getElementById("p6")];
     for(i=1;i<7;i++)
         p[i-1].innerHTML = p[i-1].innerHTML + " <strong>" + localStorage.getItem(i) + "</strong>";
+    writePatient();
 }
 
 function goConfirmFormPage(value) { 
@@ -40,6 +41,11 @@ function insertPatient() {
     window.location.href = "https://eupecric.github.io/ppsus/questao1.html";
 }
 
+function writePatient() {
+    patientSpan = document.getElementById("patient-name");
+    patientSpan.innerHTML = localStorage.getItem("patient").toUpperCase();
+}
+
 function verifyForm(currentQuestion) {
     var answer = [localStorage.getItem("1"), localStorage.getItem("2"), localStorage.getItem("3"), localStorage.getItem("4"), localStorage.getItem("5"), localStorage.getItem("6")];
     var navQuestion = [document.getElementById("nav-q1"), document.getElementById("nav-q2"), document.getElementById("nav-q3"), document.getElementById("nav-q4"), document.getElementById("nav-q5"), document.getElementById("nav-q6")];
@@ -49,7 +55,7 @@ function verifyForm(currentQuestion) {
         if(i == (currentQuestion-1)) {
             navQuestion[i].innerHTML = "Questão " + questionNumber + '<br> <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>';
             if(answer[i]!=-1) {
-                document.getElementById("label-" + answer[i]).style="background-color:#222; font-weight:bold; color:#fff";
+                document.getElementById("label-" + answer[i]).style="background-color:#205077; font-weight:bold; color:#fff";
                 document.getElementById("radio-" + answer[i]).checked=true;
             }
             navQuestion[i].style="color:#fff";
@@ -64,10 +70,9 @@ function verifyForm(currentQuestion) {
         }
             navQuestion[i].className="six-col-grid active";
     }
- 
+    
     //Escreve nome do paciente
-    patientSpan = document.getElementById("patient-name");
-    patientSpan.innerHTML = localStorage.getItem("patient").toUpperCase();
+    writePatient();
 
     //Escreve nome do agente de saude no footer
     footer = document.getElementById("agent-name");
@@ -85,7 +90,7 @@ function clearSelection() {
 function radioClick(answer) {
     clearSelection();
     label = document.getElementById("label-" + answer);
-    label.style = "background-color:#222; font-weight:bold; color:#fff";
+    label.style = "background-color:#205077; font-weight:bold; color:#fff";
 }
 
 function goTo(question) {
@@ -119,4 +124,13 @@ function nextQuestion(btn) {
     }
     else
         alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");
+}
+
+function printDiv(divName) {
+
+    var printContents = document.getElementById(divName).innerHTML;
+    w=window.open();
+    w.document.write(printContents);
+    w.print();
+    w.close();
 }
