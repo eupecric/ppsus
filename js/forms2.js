@@ -1,11 +1,11 @@
 function intializateAnswers(form_number) {
     if(form_number==1) {
-        localStorage.setItem("1_1", -1);
-        localStorage.setItem("2_1", -1);
-        localStorage.setItem("3_1", -1);
-        localStorage.setItem("4_1", -1);
-        localStorage.setItem("5_1", -1);
-        localStorage.setItem("6_1", -1);
+        localStorage.setItem("1", -1);
+        localStorage.setItem("2", -1);
+        localStorage.setItem("3", -1);
+        localStorage.setItem("4", -1);
+        localStorage.setItem("5", -1);
+        localStorage.setItem("6", -1);
     }
     else {
         localStorage.setItem("1_2", -1);
@@ -32,30 +32,22 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function confirmForm(form_number) {
-    var number_questions = 1;
-    var p = [];
-    var aux_p;
-    aux_p = document.getElementById("p1");
-    while(aux_p != null) {
-        number_questions++;
-        p.push(aux_p);
-        aux_p = document.getElementById("p" + number_questions);
-    }
-    
-    for(i=1;i<number_questions;i++)
-        p[i-1].innerHTML = p[i-1].innerHTML + " <p>Resposta: <strong>" + localStorage.getItem(i + "_" + form_number) + "</strong></p>";
-
+function confirmForm() {
+    var p = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3"), document.getElementById("p4"), document.getElementById("p5"), document.getElementById("p6")];
+    for(i=1;i<7;i++)
+        p[i-1].innerHTML = p[i-1].innerHTML + " <p>Resposta: <strong>" + localStorage.getItem(i) + "</strong></p>";
     writePatient();
+
     span = document.getElementById("agent-name");
     span.innerHTML = localStorage.getItem("login").toUpperCase();
 }
 
-function goConfirmFormPage(currentQuestion, form_number) { 
+function goConfirmFormPage(value) { 
     var answer = document.querySelector('input[name="answer"]:checked');
+    var currentQuestion = parseInt(value);
     if(answer!=null) {
-        saveQuestion(currentQuestion + "_" + form_number, answer.value);
-        window.location.href="https://eupecric.github.io/ppsus/form" + form_number + "/confirma.html";
+        saveQuestion(currentQuestion, answer.value);
+        window.location.href="https://eupecric.github.io/ppsus/confirma_respostas.html";
     }
     else
         alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");
@@ -114,7 +106,7 @@ function insertPatient(form_number) {
     localStorage.setItem("patient",patient);
     // alert(patients);
     localStorage.setItem("patients",patients);
-    window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao1.html";
+    window.location.href = "https://eupecric.github.io/ppsus/questao1_" + form_number + ".html";
 }
 
 function writePatient() {
@@ -133,9 +125,8 @@ function verifyForm(currentQuestion, form_number, part_form) {
     var max;
 
     if(form_number==1) {
-        answer = [localStorage.getItem("1_1"), localStorage.getItem("2_1"), localStorage.getItem("3_1"), localStorage.getItem("4_1"), localStorage.getItem("5_1"), localStorage.getItem("6_1")];
+        answer = [localStorage.getItem("1"), localStorage.getItem("2"), localStorage.getItem("3"), localStorage.getItem("4"), localStorage.getItem("5"), localStorage.getItem("6")];
         navQuestion = [document.getElementById("nav-q1"), document.getElementById("nav-q2"), document.getElementById("nav-q3"), document.getElementById("nav-q4"), document.getElementById("nav-q5"), document.getElementById("nav-q6")]; 
-        questions = ['1','2','3','4','5','6'];
         max = 6;
     }
     else {
@@ -206,7 +197,7 @@ function verifyForm(currentQuestion, form_number, part_form) {
 function clearSelection(form_number) {
     radio = document.querySelectorAll(".opt-question");
     for(i=0; i<radio.length; i++) {
-        if(form_number==1)
+        if(form_number==1) 
             radio[i].style = "background-color:#ddd; color:initial; font-weight: normal";
         else
             radio[i].style = "background-color:#d7e8e1; color:initial; font-weight: normal";
@@ -222,43 +213,46 @@ function checkboxClick(answer) {
 function radioClick(answer, form_number) {
     clearSelection(form_number);
     label = document.getElementById("label-" + answer);
-    if(form_number==1) {
-        label.style = "background-color:#205077; font-weight:bold; color:#fff";
-    }
-    else {
+    if(form_number==1)
+        radio[i].style = "background-color:#ddd; color:initial; font-weight: normal";
+    else
         label.style = "background-color:#1f7554; font-weight:bold; color:#fff";
-    }
 }
 
-function goTo(question, form_number) {
+function goTo(question) {
     navQ = document.getElementById("nav-q" + question);
     if(navQ.className.search("active")>-1)
-        window.location.href = "https://eupecric.github.io/ppsus/form" + form_number +"/questao" + question  + ".html";
+        window.location.href = "https://eupecric.github.io/ppsus/questao" + question  + "_2.html";
 }
 
 function saveQuestion(question, answer) {
     var patient = localStorage.getItem('patient') + '_' + question;
+    answer = answer;
     localStorage.setItem(patient, answer);
     localStorage.setItem(question, answer);
 }
 
-function previousQuestion(btn, currentQuestion, form_number) {
+function previousQuestion(btn) {
     var answer = document.querySelector('input[name="answer"]:checked');
+    var currentQuestion = parseInt(btn.value)+1;
     if(answer!=null) {
         saveQuestion(currentQuestion, answer.value);
     }
     else
         saveQuestion(currentQuestion, -1);
 
-    window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
+    window.location.href = "https://eupecric.github.io/ppsus/questao" + btn.value  + ".html";
 }
 
 function nextQuestion(btn, currentQuestion, form_number) {
     var answer = document.querySelector('input[name="answer"]:checked');
     if(answer!=null) {
-        saveQuestion(currentQuestion + "_" + form_number, answer.value);
-
-        window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
+        if(form_number==2) {
+            saveQuestion(currentQuestion + "_2", answer.value);
+            window.location.href = "https://eupecric.github.io/ppsus/questao" + btn.value  + ".html";
+        }
+        else
+            window.location.href = "https://eupecric.github.io/ppsus/questao" + btn.value  + ".html";
     }
     else
         alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");

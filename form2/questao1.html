@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PPSUS</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+        <script src="../js/forms.js"></script>
+        <link href="../css/form2.css" rel="stylesheet">
+    </head>
+    <body onLoad="verifyForm('1', 2, 1)">
+        <span class="patient-name" id="patient-name"></span>
+        <div class="one-col-grid">
+            <nav class="one-col-grid">
+                <div class="nav-bar">
+                    <label class="five-col-grid" id="nav-q1" onclick="goTo('1', 2)"></label>
+                    <label class="five-col-grid" id="nav-q2a" onclick="goTo('2a', 2)"></label>
+                    <label class="five-col-grid" id="nav-q2b" onclick="goTo('2b', 2)"></label>
+                    <label class="five-col-grid" id="nav-q3" onclick="goTo('3', 2)"></label>
+                    <label class="five-col-grid" id="nav-q4" onclick="goTo('4', 2)"></label>
+                </div>
+            </nav>
+            <div class="one-col-grid main">
+                <form id="form1">
+                    <h2 align="center">Questão 1</h2>
+                    <hr>
+                    <div align="center" style="padding-bottom: 14px"> <img src="../images/upload.png" width="100px" id="upload_image" onclick="upload_img()"> <input type="file" id="img_relogio" style="display:none;" onchange="saveFile(this)"> </div>
+                    <label class="one-col-grid opt-question" id="label-Sem_erros" onclick="radioClick('Sem_erros', 2)" align="center">
+                        <input type="radio" name="answer" id="radio-Sem_erros" value="Sem erros"> Sem erros
+                    </label>
+                    <label class="one-col-grid opt-question" id="label-Pequenos_erros" onclick="radioClick('Pequenos_erros', 2)" align="center">
+                        <input type="radio" name="answer" id="radio-Pequenos_erros" value="Pequenos erros"> Pequenos erros
+                    </label>
+                    <label class="one-col-grid opt-question" id="label-Grandes_erros" onclick="radioClick('Grandes_erros', 2)" align="center">
+                        <input type="radio" name="answer" id="radio-Grandes_erros" value="Grandes erros"> Grandes erros
+                    </label>
+                    <div align="center" class="one-col-grid flow-btn">
+                        <div class="three-col-grid">&nbsp
+                        </div>
+                        <div class="three-col-grid">
+                            <p id="agent-name"></p>
+                        </div>
+                        <div class="three-col-grid">
+                            <button type="button" class="btn btn-primary btn-large" onclick="nextQuestion(this, '1', 2)" value="2a">Próxima <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--<footer style="position: fixed; bottom: 0px; width: 100%;">
+                <p id="agent-name"></p>
+            </footer>-->
+        </div>
+    </body>
+</html>
