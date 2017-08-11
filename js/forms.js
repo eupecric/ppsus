@@ -157,8 +157,9 @@ function verifyForm(currentQuestion, form_number, part_form) {
         if(questions[i] == (currentQuestion)) {
             navQuestion[i].innerHTML = "Questão " + questions[i] + '<br> <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>';
             if(answer[i]!=-1) {
-                var label = document.getElementById("label-" + answer[i]);
-                var radio = document.getElementById("radio-" + answer[i]);
+                var label = document.getElementById("label-" + answer[i].replace(" ", "_"));
+                var radio = document.getElementById("radio-" + answer[i].replace(" ", "_"));
+                alert(label);
                 if(label!=null) {
                     if(form_number==1)
                         label.style="background-color:#205077; font-weight:bold; color:#fff";
