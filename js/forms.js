@@ -159,7 +159,6 @@ function verifyForm(currentQuestion, form_number, part_form) {
             if(answer[i]!=-1) {
                 var label = document.getElementById("label-" + answer[i].replace(" ", "_"));
                 var radio = document.getElementById("radio-" + answer[i].replace(" ", "_"));
-                alert(label);
                 if(label!=null) {
                     if(form_number==1)
                         label.style="background-color:#205077; font-weight:bold; color:#fff";
@@ -250,7 +249,6 @@ function previousQuestion(btn, currentQuestion, form_number) {
     }
     else
         saveQuestion(currentQuestion, -1);
-    alert("https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html");
     window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
 }
 
@@ -258,11 +256,9 @@ function nextQuestion(btn, currentQuestion, form_number) {
     var answer = document.querySelector('input[name="answer"]:checked');
     if(answer!=null) {
         saveQuestion(currentQuestion + "_" + form_number, answer.value);
-        alert("https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html");
         window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
     }
     else
-        alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");
 }
 
 function printDiv(divName) {
