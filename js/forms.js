@@ -249,7 +249,7 @@ function previousQuestion(btn, currentQuestion, form_number) {
     }
     else
         saveQuestion(currentQuestion, -1);
-
+    alert("https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html");
     window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
 }
 
@@ -257,7 +257,7 @@ function nextQuestion(btn, currentQuestion, form_number) {
     var answer = document.querySelector('input[name="answer"]:checked');
     if(answer!=null) {
         saveQuestion(currentQuestion + "_" + form_number, answer.value);
-
+        alert("https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html");
         window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
     }
     else
