@@ -127,6 +127,22 @@ input[name=answer] {
     background-color: #1f7554;
 }
 
+.btn:focus {
+    background-color: #146042 !important;
+}
+
+.btn:visited {
+    background-color: #146042 !important;
+}
+
+.btn:active {
+    background-color: #146042 !important;
+}
+
+.btn:target {
+    background-color: #146042 !important;
+}
+
 .btn-large {
     padding: 16px 50px;
     font-size: 1em;
