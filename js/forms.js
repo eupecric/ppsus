@@ -259,6 +259,7 @@ function nextQuestion(btn, currentQuestion, form_number) {
         window.location.href = "https://eupecric.github.io/ppsus/form" + form_number + "/questao" + btn.value  + ".html";
     }
     else
+        alert("SELECIONE ALGUMA RESPOSTA PARA PROSSEGUIR");
 }
 
 function printDiv(divName) {
